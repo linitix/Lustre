@@ -82,7 +82,7 @@ class EitherTests: XCTestCase {
     }
     
     fileprivate func countCharacters(_ string: String) -> Int {
-        return string.characters.count
+        return string.count
     }
     
     func testMapRightRight() {

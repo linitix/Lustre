@@ -89,7 +89,7 @@ public func !=<LeftEither: EitherType, RightEither: EitherType>(lhs: LeftEither,
 }
 
 public func ==<LeftEither: EitherType, RightEither: EitherType>(lhs: LeftEither, rhs: RightEither) -> Bool where LeftEither.LeftType == Error, RightEither.LeftType == Error, LeftEither.RightType == Void, RightEither.RightType == Void {
-    return lhs.equals(rhs, leftEqual: { $0.matches($1) }, rightEqual: { _ in true })
+    return lhs.equals(rhs, leftEqual: { $0.matches($1) }, rightEqual: { _,_  in true })
 }
 
 public func !=<LeftEither: EitherType, RightEither: EitherType>(lhs: LeftEither, rhs: RightEither) -> Bool where LeftEither.LeftType == Error, RightEither.LeftType == Error, LeftEither.RightType == Void, RightEither.RightType == Void {

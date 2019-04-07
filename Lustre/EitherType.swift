@@ -99,7 +99,7 @@ public func !=<LeftEither: EitherType, RightEither: EitherType>(lhs: LeftEither,
 }
 
 public func ==<LeftEither: EitherType, RightEither: EitherType>(lhs: LeftEither, rhs: RightEither) -> Bool where LeftEither.LeftType == Void, RightEither.LeftType == Void, LeftEither.RightType: Equatable, RightEither.RightType == LeftEither.RightType {
-    return lhs.equals(rhs, leftEqual: { _ in true }, rightEqual: ==)
+    return lhs.equals(rhs, leftEqual: { _,_  in true }, rightEqual: ==)
 }
 
 public func !=<LeftEither: EitherType, RightEither: EitherType>(lhs: LeftEither, rhs: RightEither) -> Bool where LeftEither.LeftType == Void, RightEither.LeftType == Void, LeftEither.RightType: Equatable, RightEither.RightType == LeftEither.RightType {
@@ -107,7 +107,7 @@ public func !=<LeftEither: EitherType, RightEither: EitherType>(lhs: LeftEither,
 }
 
 public func ==<LeftEither: EitherType, RightEither: EitherType>(lhs: LeftEither, rhs: RightEither) -> Bool where LeftEither.LeftType: Equatable, RightEither.LeftType == LeftEither.LeftType, LeftEither.RightType == Void, RightEither.RightType == Void {
-    return lhs.equals(rhs, leftEqual: ==, rightEqual: { _ in true })
+    return lhs.equals(rhs, leftEqual: ==, rightEqual: { _,_  in true })
 }
 
 public func !=<LeftEither: EitherType, RightEither: EitherType>(lhs: LeftEither, rhs: RightEither) -> Bool where LeftEither.LeftType: Equatable, RightEither.LeftType == LeftEither.LeftType, LeftEither.RightType == Void, RightEither.RightType == Void {

@@ -16,9 +16,9 @@ extension Optional: EitherType {
         self = .some(right)
     }
     
-    public func analysis<Result>(ifLeft: (Void) -> Result, ifRight: (Wrapped) -> Result) -> Result {
+    public func analysis<Result>(ifLeft: (()) -> Result, ifRight: (Wrapped) -> Result) -> Result {
         switch self {
-        case .none: return ifLeft()
+        case .none: return ifLeft(())
         case .some(let value): return ifRight(value)
         }
     }

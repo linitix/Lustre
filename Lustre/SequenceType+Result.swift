@@ -8,7 +8,7 @@
 
 extension Sequence where Iterator.Element: EitherType, Iterator.Element.LeftType == Error  {
     
-    fileprivate typealias Value = Iterator.Element.RightType
+    public typealias Value = Iterator.Element.RightType
     
     public func partition() -> ([Error], [Value]) {
         var lefts  = [Error]()
@@ -49,7 +49,7 @@ extension Sequence where Iterator.Element: EitherType, Iterator.Element.LeftType
 
 extension EitherType where LeftType == Error, RightType: Sequence {
     
-    fileprivate typealias Element = RightType.Iterator.Element
+    public typealias Element = RightType.Iterator.Element
     
     public func split<NewValue>(_ transform: @escaping (Element) -> Result<NewValue>) -> Result<([Error], [NewValue])> {
         return map {

@@ -119,11 +119,11 @@ class CustomResultTests: XCTestCase {
     }
     
     fileprivate func countCharacters(_ string: String) -> Int {
-        return string.characters.count
+        return string.count
     }
     
     func testMapSuccessNewType() {
-        assertSuccess(aSuccessResult.map(countCharacters), aTestValue.characters.count)
+        assertSuccess(aSuccessResult.map(countCharacters), aTestValue.count)
     }
 
     func testMapFailureNewType() {

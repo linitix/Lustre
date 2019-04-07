@@ -30,10 +30,10 @@ class VoidResultTests: XCTestCase {
             self = .success
         }
         
-        func analysis<Result>(ifLeft: (Swift.Error) -> Result, ifRight: (Void) -> Result) -> Result {
+        func analysis<Result>(ifLeft: (Swift.Error) -> Result, ifRight: (()) -> Result) -> Result {
             switch self {
             case .failure(let error): return ifLeft(error)
-            case .success: return ifRight()
+            case .success: return ifRight(())
             }
         }
         

@@ -11,6 +11,7 @@ Pod::Spec.new do |s|
   s.social_media_url = "http://twitter.com/zwaldowski"
   s.ios.deployment_target = "8.0"
   s.osx.deployment_target = "10.9"
+  s.swift_version = '4.2'
   s.source       = { :git => "https://github.com/zwaldowski/Lustre.git", :tag => "v#{s.version}" }
   s.source_files  = "Lustre/*.swift"
   s.requires_arc = true
